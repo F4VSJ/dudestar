@@ -23,21 +23,22 @@ Talkgroup:  For DMR, enter the talkgroup ID number.  A very active TG for testin
 MYCALL/URCALL/RPTR1/RPTR2 are always visible, but are only relevent to Dstar modes REF/DCS/XRF.  These fields need to be entered correctly before attempting to TX on any DSTAR reflector.  RPTR2 is automatically entered with a suggested value when connected, but can still be modified for advanced users.
 
 # Compiling on Linux
-This software is written in C++ on Linux and requires mbelib and QT5, and natually the devel packages to build.  With these requirements met, run the following:
-```
-qmake
-make
-```
-qmake may have a different name on your distribution i.e. on Fedora it's called qmake-qt5
-
 Notes for building/running Debian/Raspbian:  In addition to the Linux build requirements, there are some additional requirements for running this QT application in order for the audio devices to be correctly detected:
 ```
 sudo apt-get install libqt5multimedia5-plugins libqt5serialport5-dev qtmultimedia5-dev libqt5multimediawidgets5 libqt5multimedia5-plugins libqt5multimedia5
+sudo apt install qt5-default
+
+
 ```
 And if pulseaudio is not currently installed:
 ```
 sudo apt-get install pulseaudio
 ```
+This software is written in C++ on Linux and requires mbelib and QT5, and natually the devel packages to build.  With these requirements met, run the following:
+```
+qmake
+make
+
 
 # Builds
 A 32 bit Windows executable is available from the releases section.  This is a statically linked, stand-alone executable. It does not need to be installed.  Just run it and go.
